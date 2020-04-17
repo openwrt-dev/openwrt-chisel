@@ -44,7 +44,7 @@ endef
 
 define Package/chisel/install
 	$(INSTALL_DIR) $(1)/usr/bin
-	$(INSTALL_BIN) bin/$(ARCH)/chisel_linux_$(BIN_ARCH) $(1)/usr/bin
+	$(INSTALL_BIN) bin/$(ARCH)/chisel_linux_$(BIN_ARCH) $(1)/usr/bin/chisel
 endef
 
 $(eval $(call BuildPackage,chisel))
