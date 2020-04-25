@@ -61,8 +61,10 @@ start_chisel_client() {
 
 	# main
 	append_value $1 server_url
-	append_value $1 local_address
-	append_value $1 remote_address
+	local local_address remote_address
+	config_get local_address $1 local_address
+	config_get remote_address $1 remote_address
+	procd_append_param command "${local_address}:${remote_address}"
 
 	procd_close_instance
 }
