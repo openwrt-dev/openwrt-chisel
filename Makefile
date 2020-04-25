@@ -32,12 +32,12 @@ endif
 ifeq ($(ARCH),aarch64)
 	BIN_ARCH:=arm64
 endif
-#ifeq ($(ARCH),mips)
-#	BIN_ARCH:=mips_sf
-#endif
-#ifeq ($(ARCH),mipsel)
-#	BIN_ARCH:=mipsle_sf
-#endif
+ifeq ($(ARCH),mips)
+	BIN_ARCH:=mips_sf
+endif
+ifeq ($(ARCH),mipsel)
+	BIN_ARCH:=mipsle_sf
+endif
 
 define Build/Compile
 endef
