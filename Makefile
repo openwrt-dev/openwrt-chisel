@@ -45,6 +45,10 @@ endef
 define Package/chisel/install
 	$(INSTALL_DIR) $(1)/usr/bin
 	$(INSTALL_BIN) bin/$(ARCH)/chisel_linux_$(BIN_ARCH) $(1)/usr/bin/chisel
+	$(INSTALL_DIR) $(1)/etc/init.d
+	$(INSTALL_BIN) files/chisel.init $(1)/etc/init.d/chisel
+	$(INSTALL_DIR) $(1)/etc/config
+	$(INSTALL_CONF) files/chisel.config $(1)/etc/config/chisel
 endef
 
 $(eval $(call BuildPackage,chisel))
